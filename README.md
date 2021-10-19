@@ -12,20 +12,18 @@ Use microservice architecture; for example, on the online shop, each service sho
 This sample application has 2 microservices:
 ** Contract microservice
 this microservice implements CRUD operation using generic Repository and unit of work pattern.
-I call store procedure using dapper/Entity framework.
-I use Migration to capture all stages in creating tables and store procedures in a database.
+I call store procedure using dapper/ADO.NET.
+I use entity framework core Migration to capture all stages in creating tables and store procedures in a database.
 
 ** SocialMedia microservice
 this microservice implements CRUD operation using generic Repository pattern and custom repository base on a unit-of-work pattern.
-I use entity framework core for all CRUD operations.
+I use entity framework core for all operations.
 
-I Used a Microsoft SQL server to for both microservices.
-I use swagger in each microservice to document my APIs in each microservice and better use.
+I Used a Microsoft SQL server for both microservices.
+I use swagger in each microservice to document my APIs in each microservice.
 
 Do not forget to change  ConnectionStrings in the appsettings.json file for each microservice.
 Each microservice has it,s own configuration, classes, files and has its own docker file.
-
-I use swagger in each microservice to document my APIs in each microservice and better use.
 
 To  create docker image file frim Docker file in the directory that has .sln file type:
 
