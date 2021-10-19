@@ -9,13 +9,13 @@ SQL Server (+ Stored Procedure)
 Unit of Work Pattern
 Use microservice architecture; for example, on the online shop, each service should be implemented on its own Docker Image.
 
-This sample application has 2 microservices.
-**Contract microservice
+This sample application has 2 microservices:
+** Contract microservice
 this microservice implements CRUD operation using generic Repository and unit of work pattern.
 I call store procedure using dapper/Entity framework.
 I use Migration to capture all stages in creating tables and store procedures in a database.
 
-**SocialMedia microservice
+** SocialMedia microservice
 this microservice implements CRUD operation using generic Repository pattern and custom repository base on a unit-of-work pattern.
 I use entity framework core for all CRUD operations.
 
