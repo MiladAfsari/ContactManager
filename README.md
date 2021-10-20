@@ -26,11 +26,9 @@ Each microservice has it,s own configuration, classes, files and has its own doc
 
 To  create docker image file frim Docker file in the directory that has .sln file use following commands:
 ```
-docker build -f SocialMedia\Dockerfile -t contact_service_image
-docker build -f Contact\Dockerfile -t socialmedia_service_image
+docker build -f [PhysicalPath] -t [ImageName]
 ```
-to run your containers use following commands:
+To run your containers use following commands:
 ```
-docker run --rm -it -p 5000:80 contact_service_image:latest
-docker run --rm -it -p 5001:80 socialmedia_service_image:latest
+docker run --rm -it -p 5000:80 [ImageName]:latest
 ```
