@@ -34,5 +34,3 @@ to run your containers type :
 docker run --rm -it -p 5000:80 contact_service_image:latest
 docker run --rm -it -p 5001:80 socialmedia_service_image:latest
 ```
-You can change the image names and paths base on your configuration.
-
