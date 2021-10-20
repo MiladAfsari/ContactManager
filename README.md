@@ -18,8 +18,8 @@ Use Entity Core Migration to Initial database with related tables and store proc
 ## SocialMedia microservice
 This microservice implements CRUD operation using generic Repository and custom repository base on a unit-of-work pattern Using Entity framework core.
 
-I Used a Microsoft SQL server for both microservices.
-I use swagger in each microservice to document my APIs in each microservice.
+I Use Microsoft SQL Server as database for both microservices.
+also use [swagger](https://swagger.io/) in each microservice to document my APIs.
 
 Do not forget to change  ConnectionStrings in the appsettings.json file for each microservice.
 Each microservice has it,s own configuration, classes, files and has its own docker file.
