@@ -3,11 +3,11 @@ This Is a small application with minimal Implementation
 
 I Use the following technologies on your project:
 
-ASP.NET Core
-Entity Framework (with Migrations)
-SQL Server (+ Stored Procedure)
-Unit of Work Pattern
-Use microservice architecture; for example, on the online shop, each service should be implemented on its own Docker Image.
+- ASP.NET Core
+- Entity Framework (with Migrations)
+- SQL Server (+ Stored Procedure)
+- Unit of Work Pattern
+- Use microservice architecture; for example, on the online shop, each service should be implemented on its own Docker Image.
 
 This sample application has 2 microservices:
 ## Contract microservice
