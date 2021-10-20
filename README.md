@@ -1,7 +1,7 @@
 # ContactManager
 This Is a small application with minimal Implementation
 
-I Use the following technologies on this project:
+I use the following technologies on this project:
 
 - ASP.NET Core
 - Entity Framework (with Migrations)
@@ -24,7 +24,7 @@ also use [swagger](https://swagger.io/) in each microservice to document my APIs
 Do not forget to change  ConnectionStrings in the appsettings.json file for each microservice.
 Each microservice has it,s own configuration, classes, files and has its own docker file.
 
-To  create docker image file frim Docker file in the directory that has .sln file use following commands:
+To  create docker image file on the directory that has .sln file type following commands:
 ```
 docker build -f [PhysicalPath] -t [ImageName]
 ```
