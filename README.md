@@ -1,7 +1,7 @@
 # ContactManager
 This Is a small application with minimal Implementation
 
-I Use the following technologies on your project:
+I Use the following technologies on this project:
 
 - ASP.NET Core
 - Entity Framework (with Migrations)
