@@ -11,13 +11,12 @@ I Use the following technologies on your project:
 
 This sample application has 2 microservices:
 ## Contract microservice
-this microservice implements CRUD operation using generic Repository and unit of work pattern.
-I call store procedure using [Dapper](https://dapper-tutorial.net/).
-I use entity framework core Migration to capture all stages in creating tables and store procedures in a database.
+This microservice implements CRUD operation using generic Repository and unit of work pattern.
+Use [Dapper](https://dapper-tutorial.net/) as Micro ORM to call store procedures and work with the database.
+Use Entity Core Migration to Initial database with related tables and store procedures.
 
 ## SocialMedia microservice
-this microservice implements CRUD operation using generic Repository pattern and custom repository base on a unit-of-work pattern.
-I use entity framework core for all operations.
+This microservice implements CRUD operation using generic Repository and custom repository base on a unit-of-work pattern Using Entity framework core.
 
 I Used a Microsoft SQL server for both microservices.
 I use swagger in each microservice to document my APIs in each microservice.
