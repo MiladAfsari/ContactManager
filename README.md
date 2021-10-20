@@ -24,12 +24,12 @@ also use [swagger](https://swagger.io/) in each microservice to document my APIs
 Do not forget to change  ConnectionStrings in the appsettings.json file for each microservice.
 Each microservice has it,s own configuration, classes, files and has its own docker file.
 
-To  create docker image file frim Docker file in the directory that has .sln file type:
+To  create docker image file frim Docker file in the directory that has .sln file use following commands:
 ```
 docker build -f SocialMedia\Dockerfile -t contact_service_image
 docker build -f Contact\Dockerfile -t socialmedia_service_image
 ```
-to run your containers type :
+to run your containers use following commands:
 ```
 docker run --rm -it -p 5000:80 contact_service_image:latest
 docker run --rm -it -p 5001:80 socialmedia_service_image:latest
