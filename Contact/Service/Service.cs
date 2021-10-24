@@ -1,5 +1,6 @@
 ﻿using Contact.Model;
 using Contact.Repository;
+using Contact.Repository.Core;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,26 +10,31 @@ namespace Contact.Service
 {
     public class Service : IService
     {
-        private readonly IRepository _repository;
-        public Service(IRepository repository)
+        private readonly IUnitOfWork _unitOfWork ;
+        public Service(IUnitOfWork unitOfWork)
         {
-            _repository = repository;
+            _unitOfWork = unitOfWork;
         }
         public async Task<SPResult> AddAsync<TInput>(TInput entity, string SPName) where TInput : class
         {
-            return await _repository.AddAsync(entity, SPName);
+            var result =  await _unitOfWork.repository.AddAsync(entity, SPName);
+            _unitOfWork.Commit();
+            return result;
+
         }
 
         public async Task<SPResult> DeleteAsync<TInput>(TInput entity, string SPName) where TInput : class
         {
-            return await _repository.DeleteAsync(entity, SPName);
+            var result = await _unitOfWork.repository.DeleteAsync(entity, SPName);
+            _unitOfWork.Commit();
+            return result;
         }
 
         public async Task<SPResult<TOutput>> ListAsync<TInput, TOutput>(TInput entity, string SPName)
             where TInput : class
             where TOutput : class
         {
-            return await _repository.ListAsync<TInput, TOutput>(entity, SPName);
+            return await _unitOfWork.repository.ListAsync<TInput, TOutput>(entity, SPName);
         }
     }
 }

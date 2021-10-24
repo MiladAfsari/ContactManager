@@ -11,43 +11,35 @@ namespace Contact.Repository.Core
 {
     public class UnitOfWork : IUnitOfWork
     {
-        private readonly IConfiguration _config;
-        IDbConnection _connection => new SqlConnection(_config.GetConnectionString("DefaultConnection"));
-        IDbTransaction _transaction = null;
-        public UnitOfWork(IConfiguration config)
+        IDbTransaction _dbTransaction;
+        public UnitOfWork(IDbTransaction dbTransaction,IRepository genericRepository)
         {
-            _config = config;
+            _dbTransaction = dbTransaction;
+            repository = genericRepository;
         }
-        IDbConnection IUnitOfWork.Connection
-        {
-            get { return _connection; }
-        }
-        IDbTransaction IUnitOfWork.Transaction
-        {
-            get { return _transaction; }
-        }
-        public void Begin()
-        {
-            _transaction = _connection.BeginTransaction();
-        }
+
+        public IRepository repository { get; }
 
         public void Commit()
         {
-            _transaction.Commit();
-            Dispose();
+            try
+            {
+                _dbTransaction.Commit();
+                //_dbTransaction.Connection.BeginTransaction();
+            }
+            catch (Exception ex)
+            {
+
+                _dbTransaction.Rollback();
+            }
         }
 
-        public void Rollback()
-        {
-            _transaction.Rollback();
-            Dispose();
-        }
 
         public void Dispose()
         {
-            if (_transaction != null)
-                _transaction.Dispose();
-            _transaction = null;
+            _dbTransaction.Connection?.Close();
+            _dbTransaction.Connection?.Dispose();
+            _dbTransaction.Dispose();
         }
     }
 }
