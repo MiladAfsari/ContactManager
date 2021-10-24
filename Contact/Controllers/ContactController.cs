@@ -33,6 +33,7 @@ namespace Contact.Controllers
             string SpName = "Glb_Sp_GetContactInfo";
             return await _service.ListAsync<ContactListIn, ContactListOut>(model, SpName);
         }
+
         /// <summary>
         /// Add Contact Info
         /// </summary>
@@ -46,6 +47,7 @@ namespace Contact.Controllers
             string SpName = "Glb_Sp_AddContactInfo";
             return await _service.AddAsync(model, SpName);
         }
+
         /// <summary>
         /// Delete Contact Info
         /// </summary>
